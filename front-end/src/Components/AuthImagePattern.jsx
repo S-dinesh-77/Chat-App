@@ -1,6 +1,6 @@
 
 
-const AuthImagePattern = ({title,subtitle}) => {
+const AuthimagePattern = ({title,subtitle}) => {
   return (
     <div className=" hidden lg:flex items-center justify-center bg-base-200 p-12">
     <div className="max-w-md text-center">
@@ -18,4 +18,4 @@ const AuthImagePattern = ({title,subtitle}) => {
   )
 }
 
-export default AuthImagePattern
+export default AuthimagePattern
