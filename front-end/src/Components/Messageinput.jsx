@@ -69,45 +69,43 @@ const Messageinput = () => {
         </div>
       )}
 
-<form onSubmit={handleSendMessage} className="flex items-center gap-2">
-  <div className="flex-1 flex gap-2">
-    <input
-      type="text"
-      className="w-full input input-bordered rounded-lg input-sm sm:input-md"
-      placeholder="Type a message..."
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-    />
-    <input
-      type="file"
-      accept="image/*"
-      className="hidden"
-      ref={fileInputRef}
-      onChange={handleImageChange}
-    />
+      <form onSubmit={handleSendMessage} className="flex items-center gap-2">
+        <div className="flex-1 flex gap-2">
+          <input
+            type="text"
+            className="w-full input input-bordered rounded-lg input-sm sm:input-md"
+            placeholder="Type a message..."
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          <input
+            type="file"
+            accept="image/*"
+            className="hidden"
+            ref={fileInputRef}
+            onChange={handleImageChange}
+          />
 
-    {/* Image Upload Button */}
-    <button
-      type="button"
-      className={`flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full
-                 ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
-      onClick={() => fileInputRef.current?.click()}
-    >
-      <Image size={20} />
-    </button>
-  </div>
-
-  {/* Send Button */}
-  <button
-    type="submit"
-    className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full"
-    disabled={!text.trim() && !imagePreview}
-  >
-    <Send size={20} />
-  </button>
-</form>
-
+          <button
+            type="button"
+            className={`hidden sm:flex btn btn-circle
+                     ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+            onClick={() => fileInputRef.current?.click()}
+          >
+            <Image size={20} />
+          </button>
+        </div>
+        <button
+          type="submit"
+          className="btn btn-sm btn-circle"
+          disabled={!text.trim() && !imagePreview}
+        >
+          <Send size={22} />
+        </button>
+      </form>
     </div>
   );
 };
 export default Messageinput;
+
+"flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-full"
