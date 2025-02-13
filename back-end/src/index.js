@@ -16,8 +16,9 @@ const __dirname = path.resolve();
 
 const PORT = process.env.PORT;
 
+app.use(express.json({ limit: "10mb" })); // Adjust limit as needed
+app.use(express.urlencoded({ limit: "10mb", extended: true }));
 
-app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
     origin:"http://localhost:5173",
