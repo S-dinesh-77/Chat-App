@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import toast from "react-hot-toast";
 
-import AuthimgPattern from "../Components/AuthimgPattern.jsx";
+import { AuthimgPattern } from "../Components/AuthimagePattern";
 
 const SignupPage = () => {
   const [showPassword, setShowPassword] = useState(false);
